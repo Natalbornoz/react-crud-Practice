@@ -22,7 +22,7 @@ class App extends Component {
     super(props);
 
       this.state = {
-        products: []
+        products: JSON.parse(localStorage.getItem('products'))
       };
 
       this.onDelete = this.onDelete = this.onDelete.bind(this);
@@ -37,7 +37,7 @@ class App extends Component {
 
   //Metodo para obtener productos
   getProducts() {
-    return JSON.parse(localStorage.getItem('products'));
+    return this.state.products;
   }
 
   //Tomara un nombre como parametro
