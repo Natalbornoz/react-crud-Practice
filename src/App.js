@@ -1,21 +1,34 @@
 import React, { Component } from 'react';
 import './App.css';
 
-import AddProduct from './AddProduct';
-import ProductItem from './ProductItem';
+import AddEvent from './AddEvent';
+import Event from './Event';
 
-const products = [
+const events = [
   {
-    name:'iPad',
-    price: 200
+    name:'Concierto al aire Libre',
+    description: 'Celebraremos los 5 años de la escuela de Música Juanito Peréz ',
+    date: 12.04,
+    category: 'Tocata',
+    place: 'Paralelepipedo #878, Santiago Centro',
+    quoatas: 150,
+    hour: 19.00,
+    price: 'Gratis'
+
   },
   {
-    name: 'iPhone',
-    price: 650
+    name: 'La Brígida Orquesta *CAF* MalditoFen+Nadie',
+    description: 'EN VIVO Como Asesinar a Felipes, La Brígida Orquesta DJ SET Maldito Fen Nadie',
+    date: 12.04,
+    category: 'Tocata',
+    place: 'Paralelepipedo #878, Santiago Centro',
+    quoatas: 100,
+    hour: 22.00,
+    price: '4.000'
   }
 ];
 
-localStorage.setItem('products', JSON.stringify(products));
+localStorage.setItem('events', JSON.stringify(events));
 
 
 class App extends Component {
@@ -23,7 +36,7 @@ class App extends Component {
     super(props);
 
       this.state = {
-        products: JSON.parse(localStorage.getItem('products'))
+        events: JSON.parse(localStorage.getItem('events'))
       };
 
       this.onAdd = this.onAdd.bind(this);
@@ -32,53 +45,59 @@ class App extends Component {
     }
   
   componentWillMount() {
-    const products = this.getProducts();
+    const events = this.getEvents();
 
-    this.setState({ products });
+    this.setState({ events });
   }
 
   //Metodo para obtener productos
-  getProducts() {
-    return this.state.products;
+  getEvents() {
+    return this.state.events;
   }
 
   //Metodo para agregar elementos min 44:24 / 49:33
-  onAdd(name, price) {
-    const products = this.getProducts ();
+  onAdd(name, description, date, category, place, quoatas, hour, price) {
+    const events = this.getEvents ();
 
-    products.push({
+    events.push({
       name,
+      description,
+      date,
+      category,
+      place,
+      quoatas,
+      hour,
       price
     });
 
-    this.setState ({ products });
+    this.setState ({ events });
     // console.log(name, price);
   }
 
   //Tomara un nombre como parametro
   onDelete(name) {
-    const products = this.getProducts();
+    const events = this.getEvents();
 
-    const filteredProducts = products.filter(product => {
+    const filteredEvents = events.filter(product => {
       return product.name !== name;
     });
 
-    this.setState({ products: filteredProducts });
+    this.setState({ events: filteredEvents });
   }
  
   render() {
     return (
       <div className="App">
-       <h1>Products Manager</h1>
+       <h1>events Manager</h1>
 
-       <AddProduct
+       <AddEvent
         onAdd= {this.onAdd}
        />
 
       {
-        this.state.products.map(product => {
+        this.state.events.map(product => {
           return (
-            <ProductItem
+            <Event
             key={product.name}
             // name={product.name}
             // price={product.price}
