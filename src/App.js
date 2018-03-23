@@ -8,22 +8,22 @@ const events = [
   {
     name:'Concierto al aire Libre',
     description: 'Celebraremos los 5 años de la escuela de Música Juanito Peréz ',
-    date: 12.04,
+    date: '12/04/2018',
     category: 'Tocata',
     place: 'Paralelepipedo #878, Santiago Centro',
     quoatas: 150,
-    hour: 19.00,
+    hour: '22:00',
     price: 'Gratis'
 
   },
   {
     name: 'La Brígida Orquesta *CAF* MalditoFen+Nadie',
     description: 'EN VIVO Como Asesinar a Felipes, La Brígida Orquesta DJ SET Maldito Fen Nadie',
-    date: 12.04,
+    date: '12/04/2018',
     category: 'Tocata',
     place: 'Paralelepipedo #878, Santiago Centro',
     quoatas: 100,
-    hour: 22.00,
+    hour: '22:00',
     price: '4.000'
   }
 ];
@@ -88,7 +88,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-       <h1>events Manager</h1>
+       <h1 className="titleApp"> Crear evento</h1>
 
        <AddEvent
         onAdd= {this.onAdd}

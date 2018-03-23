@@ -1,28 +1,69 @@
-.App {
+body {
+  background-color:#F5F2F2;
+  color: #424242;
   text-align: center;
+
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+button {
+    padding: 1em;
+    width: 8em;
+    background-color: #29A19C;
+    border: none;
+    border-radius: .5em;
+    color: white;
+    cursor: pointer;
+    display: inline-block;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+button:hover {
+  background-color: #27B2AD;
 }
 
-.App-title {
-  font-size: 1.5em;
+.precio, .precioInput, .hora, .horaInput, .cupo, .cupoInput{
+  display: inline-block;
 }
 
-.App-intro {
-  font-size: large;
+.formEvent {
+  background-color: #E1E1E1;
+  border-radius: .5em;
+  padding: 1em;
+  margin: 3em;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.delete {
+  padding-top: 1em;
 }
+
+input {
+  width: 30%;
+    border-radius: 0.5em;
+    margin: none;
+    border-style: none;
+    background-color: #C1F2EE;
+    padding: 0.7em;
+}
+
+hr {
+  border-color:#424242;
+  border-style: solid;
+
+}
+
+.formName {
+  font-size: 1.3em;
+  padding-bottom: 1em;
+}
+
+span {
+  padding: 0.5em;
+}
+/* Hasta el momento está definido esto:
+
+Texto: #424242;
+Fondo: #F5F2F2;
+Botones: #29A19C;
+Botones hover: #27B2AD;
+Botón inactivo: #E6E6E6;
+Header: #60316E;
+Tipografía botones: Roboto */
